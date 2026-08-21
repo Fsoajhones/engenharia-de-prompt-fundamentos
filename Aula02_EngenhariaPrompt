@@ -1,0 +1,93 @@
+### **Tema Escolhido**
+
+* **Problema Real:** Otimização da rotina de estudos e gerenciamento de tempo para estudantes universitários que trabalham e sofrem com sobrecarga de tarefas e procrastinação.
+
+---
+
+### **Prompt Mestre Inicial (Anatomia Profissional)**
+
+> **Contexto:** Você é um especialista em produtividade acadêmica, aprendizagem acelerada e gestão de tempo para estudantes universitários.
+> **Tarefa:** Crie um plano de estudos semanal personalizado e realista para um estudante que faz faculdade à noite e trabalha em período integral durante o dia (8h às 17h).
+> **Instruções:**
+> 1. Use a técnica Pomodoro adaptada para o tempo livre do estudante.
+> 2. Priorize métodos de estudo ativo (Active Recall e Repetição Espaçada).
+> 3. Inclua horários fixos para descanso e recuperação mental.
+> 
+> 
+> **Restrições:** O plano não pode ultrapassar 2 horas de estudo diárias em dias úteis para evitar *burnout*.
+> **Formato de Saída:** Tabela organizada por dia da semana (Segunda a Domingo), contendo: Horário, Atividade, Método Recomendado e Intervalo.
+
+---
+
+### **Desenvolvimento das 3 Variações**
+
+#### **Variação 1: Mudança de Persona (Foco Científico)**
+
+* **Alteração:** Muda-se a persona para um neurocientista focado em consolidação de memória.
+* **Prompt:**
+> "Atue como um neurocientista especialista em neurobiologia da aprendizagem. Crie uma estratégia de estudos de 2 horas diárias para um universitário que trabalha o dia todo. O foco principal deve ser a consolidação da memória de longo prazo durante o sono e a redução do estresse de carga cognitiva. Formate a resposta com embasamento científico curto para cada recomendação."
+
+
+
+#### **Variação 2: Mudança de Restrições e Técnica (Socrática e Interativa)**
+
+* **Alteração:** Adiciona-se restrição rigorosa de formato e altera a abordagem para um guia passo a passo adaptativo.
+* **Prompt:**
+> "Você é um mentor de carreira e estudos. Crie um cronograma de estudos para um universitário trabalhador, mas com as seguintes limitações estritas:
+> * Nenhum bloco de estudo pode durar mais de 30 minutos contínuos.
+> * Não use tabelas; apresente o resultado em uma lista com marcadores (bullet points).
+> * Adicione ao final uma pergunta reflexiva para eu avaliar se a rotina é viável para a minha realidade."
+> 
+> 
+
+
+
+#### **Variação 3: Mudança de Formato de Saída (Matriz de Priorização)**
+
+* **Alteração:** Foco em tomada de decisão e triagem de tarefas sob pressão.
+* **Prompt:**
+> "Você é um consultor de gestão de processos. Aplique a Matriz de Eisenhower (Urgente vs. Importante) para organizar as demandas de um estudante universitário que trabalha full-time. Categorize: Trabalhos de faculdade, Provas próximas, Leitura de artigos e Lazer. Apresente o resultado em formato de Matriz em Markdown com ações práticas para cada quadrante."
+
+
+
+---
+
+### **Arquivo: `reflexo.md**`
+
+Você pode copiar o texto abaixo para criar o arquivo **`reflexo.md`** exigido pelo professor:
+
+```markdown
+# Reflexão Crítica: Desenvolvimento e Iteração de Prompts com IA Generativa
+
+## 1. Introdução
+Este documento analisa os resultados obtidos durante a criação, teste e refinamento de uma suíte de prompts iterativos para resolver o problema da **gestão de tempo e rotina de estudos de universitários que trabalham em período integral**.
+
+---
+
+## 2. Análise dos Resultados por Variação
+
+### **Prompt Mestre Inicial**
+* **Output Obtido:** Uma tabela estruturada de segunda a domingo, detalhando blocos de 2 horas diárias com técnicas como Pomodoro (25/5 min) e revisões ativas.
+* **Análise:** O prompt mestre forneceu uma resposta sólida e direta. A estrutura anatômica (Contexto + Tarefa + Instruções + Restrições + Formato) evitou respostas genéricas.
+
+### **Variação 1: Persona de Neurocientista**
+* **Output Obtido:** A IA focou em aspectos biológicos, sugerindo revisões 30 minutos antes de dormir e pausas estratégicas para diminuir o cortisol.
+* **Análise:** A alteração da persona mudou drasticamente o *tom* e a *justificativa* das sugestões, tornando as recomendações mais convincentes do ponto de vista técnico.
+
+### **Variação 2: Abordagem Interativa e Restrição Rígida**
+* **Output Obtido:** Uma lista em tópicos com microrrotinas de 30 minutos e uma pergunta final sobre viabilidade.
+* **Análise:** A proibição do uso de tabelas testou a capacidade do modelo de seguir restrições negativas. O resultado foi mais dinâmico e menos rígido que o plano inicial.
+
+### **Variação 3: Matriz de Eisenhower**
+* **Output Obtido:** Um quadro de priorização dividindo as tarefas acadêmicas entre o que deve ser feito imediatamente, agendado, delegado ou eliminado.
+* **Análise:** Essa variação ajudou na tomada de decisão rápida quando a rotina do estudante fica sobrecarregada, servindo como uma ferramenta complementar ao cronograma diário.
+
+---
+
+## 3. Lições Aprendidas e Conclusão
+
+1. **Clareza de Restrições:** Impor limites claros (ex: "máximo 2 horas", "sem tabelas") melhora drasticamente a usabilidade do resultado.
+2. **Importância do Formato de Saída:** Definir o formato desejado (Tabelas, Listas, Matrizes) economiza tempo de formatação e facilita a leitura.
+3. **Poder do Refinamento Iterativo:** Nenhuma primeira tentativa gera o resultado perfeito. O uso de variações permite abordar o mesmo problema sob ângulos preventivos, operacionais e estratégicos.
+
+```
