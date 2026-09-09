@@ -1,0 +1,385 @@
+Aqui está o relatório completo no formato Markdown sugerido pelo documento, pronto para ser salvo como `refinamento-de-prompts.md` e enviado para o seu repositório no GitHub.
+
+---
+
+# Atividade - Refinamento de Prompts
+
+
+
+## Identificação
+
+
+
+* **Nome:** Lucas Fernandes Soares
+* **Turma:** Ciência da Computação (6º Semestre)
+
+
+* **Data:** 03/09/2026
+
+
+* **Ferramenta de IA utilizada:** Gemini
+
+
+
+---
+
+## Problema escolhido
+
+
+
+### Contexto
+
+
+
+Um estudante do início da graduação em Ciência da Computação precisa entender a diferença conceitual e prática entre as estruturas de dados **Pilha (Stack)** e **Fila (Queue)** para aplicar corretamente em seus algoritmos.
+
+### Problema
+
+
+
+Compreender como funcionam as estruturas de dados Pilha e Fila, seus princípios de ordenação de acesso (LIFO vs. FIFO) e quando utilizar cada uma na solução de problemas computacionais.
+
+### Objetivo
+
+
+
+Obter uma explicação didática, estruturada e com exemplos práticos sobre Pilhas e Filas.
+
+---
+
+## Prompt 1
+
+
+
+### Prompt
+
+
+
+> Explique o que é pilha e fila em programação.
+> 
+> 
+
+### Resultado
+
+
+
+> Pilha e Fila são estruturas de dados usadas em programação para armazenar coleções de elementos.
+> **Pilha (Stack):** Funciona no sistema LIFO (Last In, First Out), onde o último elemento a entrar é o primeiro a sair. Exemplo: uma pilha de pratos. Operações comuns: push (inserir) e pop (remover).
+> **Fila (Queue):** Funciona no sistema FIFO (First In, First Out), onde o primeiro elemento a entrar é o primeiro a sair. Exemplo: uma fila de banco. Operações comuns: enqueue (inserir) e dequeue (remover).
+> Ambas são muito utilizadas no desenvolvimento de algoritmos e controle de processos.
+
+### Análise
+
+
+
+* **O que funcionou:** Apresentou corretamente os conceitos fundamentais (LIFO/FIFO) e os nomes das operações.
+
+
+* **O que faltou:** Faltaram exemplos de código, contexto de aplicação real na área de computação e uma comparação direta e legível.
+
+
+* **O que ficou genérico:** Os exemplos da vida real (pratos/banco) são clássicos, mas não explicam onde a estrutura é usada dentro de um software.
+
+
+
+---
+
+## Prompt 2
+
+
+
+### Alterações realizadas
+
+
+
+* **Papel:** Professor de Estruturas de Dados.
+
+
+* **Público:** Estudante do 1º ano de Ciência da Computação.
+
+
+* **Objetivo:** Explicar conceitualmente e na prática.
+
+
+* **Formato:** Tabela comparativa e tópicos.
+
+
+* **Restrições:** Limitar a explicação teórica e trazer exemplos de uso em sistemas reais.
+
+
+
+### Prompt
+
+
+
+> Atue como professor de Estruturas de Dados de Ciência da Computação.
+> 
+> 
+> Explique as diferenças entre as estruturas de dados Pilha e Fila para um estudante iniciante de graduação.
+> 
+> 
+> Apresente:
+> 
+> 
+> 1. Definição e princípio de funcionamento de cada uma.
+> 
+> 
+> 2. Tabela comparativa destacando: LIFO/FIFO, operação de inserção, operação de remoção e caso de uso real em sistemas computacionais.
+> 
+> 
+> 3. Um exemplo real de aplicação no desenvolvimento de softwares para cada uma.
+> 
+> 
+> 
+> 
+> Limite a resposta a aproximadamente 300 palavras.
+> 
+> 
+
+### Resultado
+
+
+
+> Olá! Vamos compreender essas duas estruturas fundamentais.
+> **1. Definições**
+> * **Pilha (Stack):** Segue a regra **LIFO** (*Last In, First Out*). O último elemento adicionado é o primeiro a ser removido.
+> * **Fila (Queue):** Segue a regra **FIFO** (*First In, First Out*). O primeiro elemento adicionado é o primeiro a ser removido.
+> 
+> 
+> **2. Tabela Comparativa**
+> | Critério | Pilha (Stack) | Fila (Queue) |
+> | --- | --- | --- |
+> | **Princípio** | LIFO | FIFO |
+> | **Inserção** | `push` (no topo) | `enqueue` (no fim) |
+> | **Remoção** | `pop` (do topo) | `dequeue` (do início) |
+> | **Caso de uso** | Histórico de navegação | Fila de impressão |
+> 
+> 
+> **3. Aplicação Real em Softwares**
+> * **Pilha:** O recurso de "Desfazer" (Ctrl+Z) em editores de texto. Cada ação é empilhada; ao desfazer, a última ação realizada é a primeira a ser removida.
+> * **Fila:** O processamento de requisições em um servidor web ou sistema de mensagens. Os pedidos que chegam primeiro são atendidos primeiro para garantir ordem justa.
+> 
+> 
+
+---
+
+## Comparação
+
+
+
+| Critério | Prompt 1 | Prompt 2 |
+| --- | --- | --- |
+| Clareza | 3 | 5 |
+| Precisão | 4 | 5 |
+| Relevância | 3 | 5 |
+| Organização | 2 | 5 |
+| Adequação ao público | 3 | 5 |
+| Atendimento ao objetivo | 3 | 5 |
+
+---
+
+## Prompt 3
+
+
+
+### O que ainda precisava melhorar?
+
+
+
+O Prompt 2 cobriu a teoria e exemplos de uso em software, mas faltava mostrar como isso se traduz em lógica de código simples (Python) e critérios para escolher qual usar em um problema.
+
+### Hipótese
+
+
+
+Adicionar uma restrição de formato com código comentado e um critério prático de tomada de decisão fará com que a resposta sirva como um guia prático de estudo e consulta para programadores.
+
+### Prompt
+
+
+
+> Atue como professor especializado em Algoritmos e Estruturas de Dados.
+> 
+> 
+> CONTEXTO: Estudante de Ciência da Computação precisa entender a diferença entre Pilha e Fila e saber qual utilizar ao resolver um problema de programação.
+> 
+> 
+> TAREFA:
+> 
+> 
+> 1. Resumo explicativo das regras LIFO e FIFO com analogias diretas.
+> 
+> 
+> 2. Tabela comparativa (Princípio, Inserção, Remoção, Aplicação em Software).
+> 
+> 
+> 3. Exemplo em código Python mínimo e comentado demonstrando o uso de ambas com listas/módulos padrão.
+> 
+> 
+> 4. Um guia de 2 passos sobre "Como decidir qual utilizar".
+> 
+> 
+> 
+> 
+> FORMATO: Organizado com subtítulos, bloco de código e tabela.
+> RESTRIÇÕES: Não ultrapasse 400 palavras. Código deve ser limpo e funcional.
+> 
+> 
+
+### Resultado
+
+
+
+> ### 1. Conceito Base
+> 
+> 
+> * **Pilha (LIFO - *Last In, First Out*):** O último que entra é o primeiro que sai. *Analogia:* Uma pilha de pratos para lavar.
+> * **Fila (FIFO - *First In, First Out*):** O primeiro que entra é o primeiro que sai. *Analogia:* Fila de caixa de supermercado.
+> 
+> 
+> ### 2. Comparativo Rápido
+> 
+> 
+> | Propriedade | Pilha | Fila |
+> | --- | --- | --- |
+> | **Acesso** | Apenas ao topo | Início (remoção) e Fim (inserção) |
+> | **Operações** | `push` / `pop` | `append` / `popleft` |
+> | **Aplicação** | Botão Desfazer (Ctrl+Z), recursão | Impressoras, tarefas assíncronas |
+> 
+> 
+> ### 3. Exemplo Prático em Python
+> 
+> 
+> ```python
+> from collections import deque
+> 
+> ```
+> 
+> 
+
+> # PILHA (usando lista)
+> 
+> 
+> pilha = []
+> pilha.append("Página 1")  # Push
+> pilha.append("Página 2")
+> topo = pilha.pop()  # Retorna 'Página 2'
+
+> # FILA (usando deque)
+> 
+> 
+> fila = deque()
+> fila.append("Cliente A")  # Enqueue
+> fila.append("Cliente B")
+> primeiro = fila.popleft()  # Retorna 'Cliente A'
+> ```
+> 
+> ### 4. Como decidir qual utilizar?
+> 1. **A ordem do processamento precisa inverter a ordem de chegada?** Se você precisa acessar primeiro o item mais recente, escolha **Pilha**.
+> 2. **A ordem precisa ser estritamente cronológica de chegada?** Se a prioridade é atender quem esperou mais tempo, escolha **Fila**.
+> 
+> ```
+> 
+> 
+
+---
+
+## Comparação final
+
+
+
+| Critério | Prompt 1 | Prompt 2 | Prompt 3 |
+| --- | --- | --- | --- |
+| Clareza | 3 | 5 | 5 |
+| Precisão | 4 | 5 | 5 |
+| Relevância | 3 | 5 | 5 |
+| Organização | 2 | 5 | 5 |
+| Adequação ao público | 3 | 5 | 5 |
+| Atendimento ao objetivo | 3 | 4 | 5 |
+| Utilidade prática | 2 | 4 | 5 |
+| **Total** | **20** | **28** | **30** |
+
+---
+
+## Validação
+
+
+
+A validação foi feita conferindo o comportamento das estruturas com a biblioteca padrão de Python (`collections.deque` para filas eficientes $O(1)$ e listas para pilhas) e testando a execução do trecho de código em ambiente de desenvolvimento. Os conceitos teóricos foram validados com a literatura clássica de Estruturas de Dados.
+
+---
+
+## Reflexão
+
+
+
+### 1. Qual foi a principal diferença entre os prompts?
+
+
+
+O Prompt 1 deu total liberdade para a IA assumir premissas, gerando uma resposta genérica. O Prompt 3 delimitou exatamente o papel, o público, o formato de saída, o contexto e o nível de aplicabilidade prática desejado.
+
+### 2. Quais elementos tiveram maior impacto?
+
+
+
+A definição do público/papel (ajustando o tom) e a especificação do formato de saída (código comentado + tabela + guia de decisão).
+
+### 3. Um prompt maior é necessariamente melhor?
+
+
+
+Não. Um prompt maior com adjetivos vagos ("explique de forma incrível e muito detalhada") gera redundância. O importante é a precisão e a presença de restrições úteis.
+
+### 4. O que ocorre quando o objetivo não é claro?
+
+
+
+A IA tenta preencher as lacunas utilizando padrões estatísticos médios, resultando em respostas genéricas, superficiais ou inadequadas para a necessidade do usuário.
+
+### 5. Quais informações são indispensáveis?
+
+
+
+Papel/Persona, Contexto do problema, Tarefa principal, Formato da resposta e Restrições/Limites.
+
+### 6. Como essa habilidade pode ser utilizada profissionalmente?
+
+
+
+Na automação de tarefas de desenvolvimento, geração de documentação de código, análise de logs de erros e criação de assistentes técnicos internos com respostas padronizadas.
+
+### 7. Quais riscos existem ao confiar automaticamente na IA?
+
+
+
+Risco de aceitar códigos com falhas de segurança, alucinações de sintaxe/funções inexistentes, ou algoritmos ineficientes em termos de complexidade de tempo/memória sem perceber.
+
+---
+
+## Take Away
+
+
+
+> **"Um bom prompt não é simplesmente um prompt longo. Ele precisa ser específico, bem delimitado em contexto e formato, e fornecer restrições claras para direcionar a IA ao objetivo exato sem ambiguidades."**
+> 
+
+---
+
+## Cinco recomendações
+
+
+
+1. **Defina um Papel e Público:** Sempre estabeleça quem a IA deve simular e para quem ela está escrevendo.
+
+
+2. **Especifique a Estrutura de Saída:** Peça formatos claros como tabelas, listas, tópicos ou blocos de código.
+
+
+3. **Estipule Restrições e Limites:** Indique o que NÃO deve ser feito e imponha limites de tamanho ou linguagem.
+
+
+4. **Forneça Contexto do Problema:** Explique a real necessidade por trás da pergunta para evitar respostas genéricas.
+
+
+5. **Valide Sempre o Resultado:** Nunca utilize respostas ou códigos de IA sem testar, revisar e confirmar a veracidade das informações.
