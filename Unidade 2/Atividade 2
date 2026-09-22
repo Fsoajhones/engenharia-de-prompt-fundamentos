@@ -1,21 +1,18 @@
-Aqui está o parecer individual estruturado para a sua atividade avaliativa da Unidade II, pronto para ser publicado no seu repositório do GitHub.
+Parecer Individual: A Colaboração Humano-IA na Engenharia de Software
 
-**Parecer Individual: A Colaboração Humano-IA na Engenharia de Software**
-
-**1. Práticas de IA e o Papel do Programador**
+1. Práticas de IA e o Papel do Programador
 A integração de assistentes virtuais como o Copilot, Replit e Ghostwriter redefiniu as metodologias de desenvolvimento contemporâneas. Ao longo do meu percurso em Ciência da Computação no UDF, particularmente no desenvolvimento de algoritmos e scripts em Python, noto que a IA atua como uma parceira vital na refatoração e depuração de código. O verdadeiro valor destas ferramentas vai além da automação básica; elas oferecem sugestões de sintaxe eficientes e otimizam processos práticos. O uso proficiente da IA já não é apenas o futuro da engenharia de software, mas sim o padrão atual exigido para manter a produtividade e a competitividade no mercado.
 
-**2. O Workflow Sustentável e a Divisão Lógica**
+2. O Workflow Sustentável e a Divisão Lógica
 A colaboração eficaz assenta numa matriz de protagonismo bem definida: as decisões de *trade-off*, arquitetura de alto nível e integrações complexas exigem liderança humana, enquanto a IA assume a redação de código *boilerplate* e implementações padrão. A metodologia de "Desenvolvimento Guiado por Comentários" ilustra na perfeição esta dinâmica: a intenção é ditada pelo humano e a proposta técnica é gerada pela máquina. Na fase de manutenção, a IA assume também um papel crucial como "tradutora", dissecando o código legado linha a linha para revelar dependências e mitigar riscos antes de qualquer alteração estrutural.
 
-**3. Ética, Segurança e a Responsabilidade Legal**
+3. Ética, Segurança e a Responsabilidade Legal
 Apesar da aceleração do desenvolvimento, a IA não substitui o rigor do pensamento crítico e da revisão humana. Modelos treinados com dados da internet aberta trazem vulnerabilidades inerentes, riscos de enviesamento e desafios relacionados com a propriedade intelectual. É fundamental sublinhar que estas ferramentas não possuem qualquer "consciência de segurança". Legalmente e eticamente, a responsabilidade por qualquer vulnerabilidade ou falha no código implementado recai inteiramente sobre o programador. Por isso, o uso da IA para gerar testes unitários abrangentes, procurando quebrar proativamente o código para encontrar cenários de falha, é uma prática indispensável para garantir a transparência e a explicabilidade técnica.
 
 ---
 
-**Transparência (Cumprimento do Requisito 3):**
+Transparência (Cumprimento do Requisito 3):
 
-* **Fontes de Pesquisa Utilizadas:** Diapositivos da apresentação "Guia de Boas Práticas na Colaboração Humano-IA" (Prof.ª Kadidja Valéria) e conceitos consolidados de arquitetura de sistemas abordados na licenciatura de Ciência da Computação do UDF. *(Nota: A análise baseia-se no material visual disponibilizado, substituindo o podcast exigido na instrução)*.
+Fontes de Pesquisa Utilizadas:** Diapositivos da apresentação "Guia de Boas Práticas na Colaboração Humano-IA" (Prof.ª Kadidja Valéria) e conceitos consolidados de arquitetura de sistemas abordados na licenciatura de Ciência da Computação do UDF. *(Nota: A análise baseia-se no material visual disponibilizado, substituindo o podcast exigido na instrução)
 
-
-* **Ferramenta de IA de Apoio:** A consolidação, estruturação e revisão formal deste texto foram apoiadas pelo modelo Google Gemini.
+Ferramenta de IA de Apoio:** A consolidação, estruturação e revisão formal deste texto foram apoiadas pelo modelo Google Gemini.
