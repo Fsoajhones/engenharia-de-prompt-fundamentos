@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>EstudaCerto – chatbot de estudos de computação</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#EAF1F5;--grid:#D3E0E8;--ink:#12263A;--card:#FFFFFF;--bot:#FFFFFF;--user:#FFD84D;--user-ink:#12263A;--accent:#0E7C86;--line:#BFD0DB}
+@media (prefers-color-scheme:dark){:root{--bg:#0F1D2A;--grid:#17293A;--ink:#E6EEF4;--card:#16283A;--bot:#1D3348;--user:#FFD84D;--user-ink:#12263A;--accent:#4FC3CC;--line:#2A4258}}
+*{box-sizing:border-box}
+html,body{height:100%;margin:0}
+body{font-family:"Bricolage Grotesque",system-ui,sans-serif;color:var(--ink);background-color:var(--bg);
+background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);background-size:24px 24px;
+display:flex;justify-content:center;padding:16px}
+.app{width:100%;max-width:720px;height:100%;display:flex;flex-direction:column;background:var(--card);border:2px solid var(--ink);border-radius:14px;overflow:hidden;box-shadow:6px 6px 0 var(--ink)}
+header{padding:16px 20px;border-bottom:2px solid var(--ink);display:flex;align-items:baseline;gap:12px;flex-wrap:wrap}
+h1{font-size:1.6rem;font-weight:800;margin:0;letter-spacing:-.02em}
+header p{margin:0;font-size:.95rem;opacity:.75}
+#log{flex:1;overflow-y:auto;padding:20px;display:flex;flex-direction:column;gap:12px}
+.msg{max-width:85%;padding:10px 14px;border-radius:12px;line-height:1.5;white-space:pre-wrap;border:1.5px solid var(--ink)}
+.bot{align-self:flex-start;background:var(--bot);border-bottom-left-radius:2px}
+.user{align-self:flex-end;background:var(--user);color:var(--user-ink);border-bottom-right-radius:2px;font-weight:600}
+.msg code{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:.88em;background:var(--grid);padding:1px 5px;border-radius:4px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;padding:0 20px 12px}
+.chips button{font:inherit;font-size:.9rem;padding:6px 12px;border-radius:999px;border:1.5px solid var(--accent);background:transparent;color:var(--accent);cursor:pointer}
+.chips button:hover{background:var(--accent);color:var(--card)}
+form{display:flex;gap:8px;padding:14px 20px;border-top:2px solid var(--ink)}
+input{flex:1;font:inherit;padding:10px 12px;border-radius:10px;border:2px solid var(--ink);background:var(--card);color:var(--ink)}
+.send{font:inherit;font-weight:800;padding:10px 18px;border-radius:10px;border:2px solid var(--ink);background:var(--accent);color:#fff;cursor:pointer}
+.send:hover{filter:brightness(1.1)}
+:focus-visible{outline:3px solid var(--user);outline-offset:2px}
+@media (prefers-reduced-motion:no-preference){#log{scroll-behavior:smooth}}
+@media (max-width:480px){body{padding:0}.app{border-radius:0;border-width:0;box-shadow:none}}
+</style>
+</head>
+<body>
+<main class="app">
+  <header>
+    <h1>EstudaCerto</h1>
+    <p>Tire dúvidas de Ciência da Computação</p>
+  </header>
+  <div id="log" aria-live="polite"></div>
+  <div class="chips" id="chips"></div>
+  <form id="form">
+    <input id="input" type="text" placeholder="Pergunte sobre algoritmos, Git, Python..." autocomplete="off" aria-label="Sua pergunta">
+    <button class="send" type="submit">Enviar</button>
+  </form>
+</main>
+
+<script>
+const BASE = [
+ {t:"Algoritmos", k:["algoritmo","algoritmos","complexidade","big o","ordenacao","busca"],
+  a:"Um algoritmo é uma sequência finita de passos para resolver um problema. Para comparar algoritmos usamos a notação Big O, que descreve como o tempo cresce com o tamanho da entrada:\n• Busca binária: O(log n)\n• Percorrer uma lista: O(n)\n• Merge sort: O(n log n)\n• Bubble sort: O(n²)"},
+ {t:"Estruturas de dados", k:["estrutura","estruturas","lista","pilha","fila","arvore","grafo","hash","vetor","array"],
+  a:"As estruturas mais comuns:\n• Array: acesso rápido por índice\n• Pilha (stack): último a entrar, primeiro a sair\n• Fila (queue): primeiro a entrar, primeiro a sair\n• Árvore: dados hierárquicos\n• Tabela hash: busca por chave em tempo médio O(1)\nSobre qual delas você quer saber mais?"},
+ {t:"Git e GitHub", k:["git","github","commit","branch","push","pull","repositorio","merge"],
+  a:"Git controla versões do seu código; o GitHub hospeda os repositórios online. Fluxo básico:\n<code>git add .</code>\n<code>git commit -m \"mensagem\"</code>\n<code>git push</code>\nUse <code>git branch</code> para criar ramos e <code>git pull</code> para baixar mudanças."},
+ {t:"HTML, CSS e JavaScript", k:["html","css","javascript","js","web","site","frontend"],
+  a:"A base de qualquer site:\n• HTML: estrutura e conteúdo\n• CSS: aparência e layout\n• JavaScript: comportamento e interação\nPara publicar de graça, use o GitHub Pages direto do seu repositório."},
+ {t:"Python", k:["python","variavel","funcao","loop","for","while","if"],
+  a:"Python é uma linguagem simples de ler e muito usada em dados, automação e IA. Exemplo:\n<code>for i in range(3): print(i)</code>\nImprime 0, 1 e 2. Funções são criadas com <code>def nome():</code>."},
+ {t:"Banco de dados", k:["banco","dados","sql","tabela","select","consulta"],
+  a:"Bancos relacionais guardam dados em tabelas e usam SQL. Uma consulta simples:\n<code>SELECT nome FROM alunos WHERE nota >= 7;</code>\nBancos NoSQL (como MongoDB) guardam documentos flexíveis, sem tabelas fixas."},
+ {t:"Inteligência artificial", k:["ia","inteligencia","artificial","machine","learning","aprendizado","chatbot","modelo"],
+  a:"IA reúne técnicas que permitem a máquinas executar tarefas que exigem inteligência. O aprendizado de máquina treina modelos com exemplos em vez de regras escritas à mão. Este chatbot, por sinal, é bem mais simples: ele procura palavras-chave na sua pergunta."},
+ {t:"Dicas de estudo", k:["estudar","estudo","dica","dicas","aprender","foco","prova","rotina"],
+  a:"Algumas práticas que funcionam:\n• Estude em blocos de 25 minutos com pausas curtas\n• Escreva código em vez de só ler\n• Faça pequenos projetos próprios\n• Revise o que aprendeu um dia, uma semana e um mês depois"}
+];
+const log=document.getElementById("log"), input=document.getElementById("input"), chips=document.getElementById("chips");
+const norm=s=>s.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g,"").replace(/[^a-z0-9 ]/g," ");
+
+function add(text,who,html){
+  const d=document.createElement("div"); d.className="msg "+who;
+  if(html) d.innerHTML=text; else d.textContent=text;
+  log.appendChild(d); log.scrollTop=log.scrollHeight;
+}
+function answer(q){
+  const n=norm(q), words=n.split(/\s+/);
+  if(/\b(oi|ola|bom dia|boa tarde|boa noite)\b/.test(n)) return "Olá! Sou o EstudaCerto. Pergunte sobre um tema de computação ou escolha uma das sugestões abaixo.";
+  if(/\b(obrigad[oa]|valeu)\b/.test(n)) return "De nada! Se tiver outra dúvida, é só perguntar.";
+  let best=null, score=0;
+  for(const item of BASE){
+    const s=item.k.filter(k=>words.includes(k)||n.includes(k+" ")||n.endsWith(k)).length;
+    if(s>score){score=s;best=item;}
+  }
+  return best ? best.a : "Ainda não sei responder isso. Tente perguntar sobre algoritmos, estruturas de dados, Git, Python, banco de dados, IA ou dicas de estudo.";
+}
+function ask(q){
+  if(!q.trim()) return;
+  add(q,"user");
+  setTimeout(()=>add(answer(q),"bot",true),350);
+}
+document.getElementById("form").addEventListener("submit",e=>{e.preventDefault();ask(input.value);input.value="";});
+BASE.forEach(item=>{
+  const b=document.createElement("button"); b.type="button"; b.textContent=item.t;
+  b.addEventListener("click",()=>ask(item.t)); chips.appendChild(b);
+});
+add("Olá! Sou o EstudaCerto, seu assistente para estudar Ciência da Computação. Sobre o que você quer conversar?","bot");
+</script>
+</body>
+</html>
